@@ -5,6 +5,7 @@ function drawGrid(noOfBoxesHeight, noOfBoxesWidth) {
         const boxDimension = Math.floor(720 / noOfBoxesWidth);
 
         const square = document.createElement("div");
+        
         square.style.backgroundColor = "rgb(243, 244, 246)";
         square.style.width = boxDimension + "px";
         square.style.height = boxDimension + "px";
@@ -16,7 +17,10 @@ function drawGrid(noOfBoxesHeight, noOfBoxesWidth) {
 
 function addHoverEffect(square) {
     square.addEventListener("mouseenter", function () {
-        square.style.backgroundColor = "black";
+        const red = Math.floor((Math.random() * 256));
+        const blue = Math.floor((Math.random() * 256));
+        const green = Math.floor((Math.random() * 256));
+        square.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
     });
 }
 
